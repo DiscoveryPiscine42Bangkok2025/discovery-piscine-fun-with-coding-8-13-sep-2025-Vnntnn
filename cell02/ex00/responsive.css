@@ -1,0 +1,40 @@
+.responsive-table-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+}
+table {
+    width: 100%;
+    min-width: 200px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+td {
+    padding: 16px;
+}
+td:first-child {
+    background-color: rgb(149, 186, 138);
+    border: 1px solid black;
+}
+td:last-child {
+    background-color: rgb(210, 167, 123);
+    border: 1px solid black;
+}
+@media (max-width: 600px) {
+    .responsive-table-container {
+        max-width: 90%;
+        padding: 2vw;
+        margin: 2vh;
+    }
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+    tr {
+        margin-bottom: 10px;
+    }
+    td {
+        box-sizing: border-box;
+        margin-bottom: 8px;
+    }
+}
