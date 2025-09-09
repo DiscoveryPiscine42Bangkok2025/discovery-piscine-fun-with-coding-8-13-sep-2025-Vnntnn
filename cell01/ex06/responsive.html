@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab</title>
+    <style>
+        .responsive-table-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 0 10px;
+        }
+        table {
+            width: 100%;
+            min-width: 200px;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        td {
+            padding: 16px;
+        }
+        td:first-child {
+            background-color: rgb(149, 186, 138);
+            border: 1px solid black;
+        }
+        td:last-child {
+            background-color: rgb(210, 167, 123);
+            border: 1px solid black;
+        }
+        @media (max-width: 600px) {
+            .responsive-table-container {
+                max-width: 100%;
+                padding: 0 2vw;
+            }
+            table, tbody, tr, td {
+                display: block;
+                width: 100%;
+            }
+            tr {
+                margin-bottom: 10px;
+            }
+            td {
+                box-sizing: border-box;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="responsive-table-container">
+        <table>
+            <tbody>
+                <tr>
+                    <td>First cell</td>
+                    <td>Second cell</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
