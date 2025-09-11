@@ -1,0 +1,36 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+
+.parallax {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+}
+
+.parallax .message {
+    background: rgba(0,0,0,0.5);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.bg1 { background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop'); }
+.bg2 { background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop'); }
+
+.content {
+    background: #000;
+    color: #e5e5e5;
+}
+
+.content-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5rem 1.25rem;
+}
+
+.content h2 { margin: 0 0 0.75rem; color: #fff; font-weight: 700; }
+.content p { margin: 0; }
+
