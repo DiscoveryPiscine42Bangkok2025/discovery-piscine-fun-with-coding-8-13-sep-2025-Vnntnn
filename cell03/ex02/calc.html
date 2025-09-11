@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <input type="text" id="f_digit">
+    <select name="operate" id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="s_digit">
+    <br>
+    <button id="calcBtn">Calculate</button>
+    <script>
+        setInterval(function() { alert("Please, use me..."); }, 30000);
+
+        document.getElementById('calcBtn').addEventListener('click', function() {
+            const f_value = document.getElementById('f_digit').value;
+            const s_value = document.getElementById('s_digit').value;
+            const operator = document.getElementById('operator').value;
+
+            const num1 = Number(f_value);
+            const num2 = Number(s_value);
+
+            if (num1 < 0 || num2 < 0) {
+                alert('Error :(');
+                return;
+            }
+
+            let res;
+            if (operator === '+') {
+                res = num1 + num2;
+            } else if (operator === '-') {
+                res = num1 - num2;
+            } else if (operator === '*') {
+                res = num1 * num2;
+            } else if (operator === '/' || operator === '%') {
+                if (num2 === 0) {
+                    alert("It's over 9000!");
+                } else {
+                    if (operator === '/') {
+                        res = num1 / num2;
+                    } else if (operator === '%') {
+                        res = num1 % num2;
+                    }
+                }
+            }
+            alert(res);
+            console.log(res);
+        });
+    </script>
+</body>
+</html>

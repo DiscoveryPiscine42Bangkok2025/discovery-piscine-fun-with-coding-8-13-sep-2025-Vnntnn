@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon (jQuery)</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background: red;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="balloon"></div>
+    <script>
+        $(function() {
+            var $balloon = $('#balloon');
+            var colors = ['red', 'green', 'blue'];
+            var colorIndex = 0;
+            var size = 200;
+            var minSize = 200;
+            var maxSize = 420;
+
+            function updateBalloon() {
+                $balloon.css({ width: size + 'px', height: size + 'px', background: colors[colorIndex] });
+            }
+
+            $balloon.on('click', function() {
+                size += 10;
+                colorIndex = (colorIndex + 1) % colors.length;
+                if (size > maxSize) {
+                    size = minSize;
+                    colorIndex = 0;
+                }
+                updateBalloon();
+            });
+
+            $balloon.on('mouseleave', function() {
+                size = Math.max(minSize, size - 5);
+                colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+                updateBalloon();
+            });
+
+            updateBalloon();
+        });
+    </script>
+</body>
+</html>

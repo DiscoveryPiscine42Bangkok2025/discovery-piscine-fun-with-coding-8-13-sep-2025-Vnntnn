@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator (jQuery)</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <input type="text" id="f_digit">
+    <select name="operate" id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="s_digit">
+    <br>
+    <button id="calcBtn">Calculate</button>
+    <script>
+        setInterval(function() { alert("Please, use me..."); }, 30000);
+        $(function() {
+            $('#calcBtn').on('click', function() {
+                var f_value = $('#f_digit').val();
+                var s_value = $('#s_digit').val();
+                var operator = $('#operator').val();
+
+                var num1 = Number(f_value);
+                var num2 = Number(s_value);
+
+                if (num1 < 0 || num2 < 0 || isNaN(num1) || isNaN(num2)) {
+                    alert('Error :(');
+                    return;
+                }
+
+                var res;
+                if (operator === '+') {
+                    res = num1 + num2;
+                } else if (operator === '-') {
+                    res = num1 - num2;
+                } else if (operator === '*') {
+                    res = num1 * num2;
+                } else if (operator === '/' || operator === '%') {
+                    if (num2 === 0) {
+                        alert("It's over 9000!");
+                    } else {
+                        if (operator === '/') {
+                            res = num1 / num2;
+                        } else if (operator === '%') {
+                            res = num1 % num2;
+                        }
+                    }
+                }
+                alert(res);
+                console.log(res);
+            });
+        });
+    </script>
+</body>
+</html>
