@@ -1,0 +1,41 @@
+.sandwich-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 40px;
+    margin: 40px auto;
+    cursor: pointer;
+    position: relative;
+}
+.sandwich-bar {
+    height: 6px;
+    width: 100%;
+    background: #222;
+    border-radius: 3px;
+}
+.sandwich-bar:hover .sandwich-bar {
+    background-color: #6d6a6a;
+}
+.menu-items {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background: #bdbbbb;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.06);
+}
+.sandwich-menu:hover .menu-items,
+.sandwich-menu:focus-within .menu-items {
+    display: flex;
+    flex-direction: column;
+}
+.menu-items a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #222;
+    padding: 8px 14px;
+    display: block;
+}
+.menu-items a:hover,
+.menu-items a:focus {
+    background: #9ad0d9;
+}
